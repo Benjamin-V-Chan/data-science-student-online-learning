@@ -1,4 +1,10 @@
+import pandas as pd
+
 # Load dataset
-# Handle missing values if any
+df = pd.read_csv("../data/students_adaptability_level_online_education.csv")
+
 # Standardize column names
-# Save preprocessed data to outputs/
+df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
+
+# Save preprocessed data
+df.to_csv("../outputs/preprocessed_data.csv", index=False)
